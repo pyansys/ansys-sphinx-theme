@@ -54,6 +54,9 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-notfound-page==1.0.4",
 ]
+changelog = [
+    "sphinx-design==0.6.1",
+]
 
 [project.entry-points."sphinx.html_themes"]
 ansys_sphinx_theme = "ansys_sphinx_theme"
@@ -119,14 +122,16 @@ show_missing = true
 [tool.towncrier]
 directory = "doc/changelog.d"
 filename = "doc/source/changelog.rst"
-template = "doc/changelog.d/changelog_template.jinja"
+template = "ansys_sphinx_theme:changelog_template.jinja"
 start_string = ".. towncrier release notes start\n"
 title_format = "`{version} <https://github.com/ansys/ansys-sphinx-theme/releases/tag/v{version}>`_ - {project_date}"
 issue_format = "`#{issue} <https://github.com/ansys/ansys-sphinx-theme/pull/{issue}>`_"
+all_bullets = false
+underlines = ["=", "^"]
 
 [[tool.towncrier.type]]
 directory = "added"
-name = "Added"
+name = "Features"
 showcontent = true
 
 [[tool.towncrier.type]]
@@ -136,7 +141,7 @@ showcontent = true
 
 [[tool.towncrier.type]]
 directory = "fixed"
-name = "Fixed"
+name = "Bug fixes"
 showcontent = true
 
 [[tool.towncrier.type]]
@@ -163,3 +168,7 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
+
+[[tool.towncrier.section]]
+name = ""
+path = ""
