@@ -45,6 +45,7 @@ doc = [
     "Pillow>=9.0",
     "PyGitHub==2.5.0",
     "pyvista[jupyter]==0.44.2",
+    "PyYAML==6.0.2",
     "requests==2.32.3",
     "Sphinx==8.1.3",
     "sphinx-autoapi==3.4.0",
@@ -53,6 +54,10 @@ doc = [
     "sphinx-gallery==0.18.0",
     "sphinx-jinja==2.0.2",
     "sphinx-notfound-page==1.0.4",
+]
+changelog = [
+    "PyYAML==6.0.2",
+    "sphinx-design==0.6.1",
 ]
 
 [project.entry-points."sphinx.html_themes"]
@@ -121,7 +126,7 @@ directory = "doc/changelog.d"
 filename = "doc/source/changelog.rst"
 template = "doc/changelog.d/changelog_template.jinja"
 start_string = ".. towncrier release notes start\n"
-title_format = "`{version} <https://github.com/ansys/ansys-sphinx-theme/releases/tag/v{version}>`_ - {project_date}"
+title_format = "`{version} <https://github.com/ansys/ansys-sphinx-theme/releases/tag/v{version}>`_ ({project_date})"
 issue_format = "`#{issue} <https://github.com/ansys/ansys-sphinx-theme/pull/{issue}>`_"
 
 [[tool.towncrier.type]]
